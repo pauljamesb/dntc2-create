@@ -1,1 +1,21 @@
-// New view
+@model DNCT5.Models.Items
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+<form method="post" asp-action="Create">
+    <div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Create" />
+    <a asp-action="Index">Back to list</a>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
